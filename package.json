@@ -1,0 +1,46 @@
+{
+  "name": "@dljsbook/ui",
+  "version": "0.0.1",
+  "description": "A package for dealing with UI",
+  "source": "src/index.tsx",
+  "main": "dist/index.js",
+  "umd:main": "dist/index.umd.js",
+  "module": "dist/index.mjs",
+  "repository": "https://github.com/dljsbook/ui",
+  "scripts": {
+    "build": "microbundle --name dljsUI --format cjs,umd --jsx react",
+    "watch": "microbundle watch --name dljsUI --format cjs,umd --jsx react",
+    "test": "jest --watchAll"
+  },
+  "author": "Kevin Scott <kevin@hitheory.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^23.3.9",
+    "@types/react": "^16.7.2",
+    "@types/styled-components": "^4.0.3",
+    "jest": "^23.6.0",
+    "microbundle": "^0.7.0",
+    "ts-jest": "^23.10.4"
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  },
+  "dependencies": {
+    "react": "^16.6.1",
+    "styled-components": "^4.0.3"
+  }
+}

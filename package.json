@@ -1,26 +1,33 @@
 {
-  "name": "@dljsbook/ui",
-  "version": "0.0.1",
-  "description": "A package for dealing with UI",
-  "source": "src/index.tsx",
-  "main": "dist/index.js",
-  "umd:main": "dist/index.umd.js",
-  "module": "dist/index.mjs",
-  "repository": "https://github.com/dljsbook/ui",
-  "scripts": {
-    "build": "microbundle --name dljsUI --format cjs,umd --jsx react",
-    "watch": "microbundle watch --name dljsUI --format cjs,umd --jsx react",
-    "test": "jest --watchAll"
-  },
+  "name": "@dljsbook/UI",
+  "version": "0.2.0",
+  "description": "UI",
   "author": "Kevin Scott <kevin@hitheory.com>",
   "license": "MIT",
+  "repository": "https://github.com/dljsbook/ui",
+  "main": "dist/index.js",
+  "scripts": {
+    "deploy": "gh-pages -d data",
+    "prepublish": "yarn build",
+    "build": "rollup -c rollup.config.js",
+    "develop": "rollup -c rollup.config.js -w",
+    "test": "jest --watchAll"
+  },
+  "dependencies": {
+    "react": "^16.6.1",
+    "styled-components": "^4.0.3"
+  },
   "devDependencies": {
     "@types/jest": "^23.3.9",
     "@types/react": "^16.7.2",
     "@types/styled-components": "^4.0.3",
     "jest": "^23.6.0",
     "microbundle": "^0.7.0",
-    "ts-jest": "^23.10.4"
+    "rollup": "^0.67.3",
+    "rollup-plugin-typescript": "^1.0.0",
+    "ts-jest": "^23.10.4",
+    "tslib": "^1.9.3",
+    "typescript": "^3.1.6"
   },
   "jest": {
     "roots": [
@@ -38,9 +45,5 @@
       "json",
       "node"
     ]
-  },
-  "dependencies": {
-    "react": "^16.6.1",
-    "styled-components": "^4.0.3"
   }
 }
